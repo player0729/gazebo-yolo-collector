@@ -1,0 +1,69 @@
+board_pos:
+- 0.0
+- 0.5
+- 0.11
+board_size:
+- 0.165
+- 0.005
+- 0.22
+textures:
+- class_id: 0
+  material: crowd/crowd_medical_1
+  name: crowd_01
+- class_id: 0
+  material: crowd/crowd_medical_2
+  name: crowd_02
+- class_id: 0
+  material: crowd/crowd_medical_3
+  name: crowd_03
+- class_id: 0
+  material: crowd/crowd_medical_4
+  name: crowd_04
+- class_id: 0
+  material: crowd/crowd_medical_5
+  name: crowd_05
+- class_id: 0
+  material: crowd/crowd_medical_6
+  name: crowd_06
+- class_id: 1
+  material: crowd/crowd_normal_7
+  name: crowd_07
+- class_id: 1
+  material: crowd/crowd_normal_8
+  name: crowd_08
+- class_id: 1
+  material: crowd/crowd_normal_9
+  name: crowd_09
+- class_id: 1
+  material: crowd/crowd_normal_10
+  name: crowd_10
+- class_id: 1
+  material: crowd/crowd_normal_11
+  name: crowd_11
+- class_id: 1
+  material: crowd/crowd_normal_12
+  name: crowd_12
+- class_id: 2
+  material: building/building_collapse
+  name: building_01
+- class_id: 3
+  material: building/building_fire
+  name: building_02
+- class_id: 4
+  material: building/building_gas
+  name: building_03
+- class_id: 5
+  material: building/building_electric
+  name: building_04
+- class_id: 6
+  material: trash/trash_food
+  name: trash_01
+- class_id: 7
+  material: trash/trash_recyclable
+  name: trash_02
+- class_id: 8
+  material: trash/trash_hazardous
+  name: trash_03
+- class_id: 9
+  material: trash/trash_other
+  name: trash_04

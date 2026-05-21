@@ -1,0 +1,14 @@
+material texture/trash_04
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture textures/trash_can_food.jpg
+        scale 1 1
+      }
+    }
+  }
+}

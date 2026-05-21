@@ -1,0 +1,31 @@
+<launch>
+  <!-- Data collection launch: Gazebo with custom world + robot -->
+  <arg name="world_file" default="$(env GAZEBO_RESOURCE_PATH)/worlds/simple_collect.world"/>
+  <arg name="gui" default="true"/>
+  <arg name="spawn" default="true"/>
+
+  <env name="TURTLEBOT3_MODEL" value="burger"/>
+  <env name="LD_LIBRARY_PATH" value="$(optenv LD_LIBRARY_PATH)"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="$(env GAZEBO_RESOURCE_PATH):$(optenv GAZEBO_RESOURCE_PATH)"/>
+  <env name="GAZEBO_MODEL_PATH" value="$(env GAZEBO_RESOURCE_PATH)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+  <param name="/use_sim_time" value="true"/>
+
+  <!-- Load URDF -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder $(env GAZEBO_RESOURCE_PATH)/urdf/turtlebot3_burger_cam.urdf.xacro"/>
+
+  <!-- Start Gazebo with custom world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_file)"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <!-- Spawn robot (set spawn:=false if world already contains the robot) -->
+  <node if="$(arg spawn)" pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"
+    args="-urdf -model turtlebot3_burger -x 0 -y 0 -z 0.01 -param robot_description"/>
+
+  <!-- Robot state publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+</launch>

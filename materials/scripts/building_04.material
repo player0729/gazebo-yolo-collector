@@ -1,0 +1,14 @@
+material texture/building_04
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture textures/building_collapse.jpg
+        scale 1 1
+      }
+    }
+  }
+}

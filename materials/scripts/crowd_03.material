@@ -1,0 +1,14 @@
+material texture/crowd_03
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture textures/crowd_medical.jpg
+        scale 1 1
+      }
+    }
+  }
+}
